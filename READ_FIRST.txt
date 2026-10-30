@@ -1,0 +1,60 @@
+ONE AUTOMATIC MODE — UPDATE EXISTING PROJECT
+
+Close the app and back up the following eight existing files:
+app.py, base_app.py, combined_detector.py, config.json, engine.py,
+personal.py, personal_engine.py, identity_view.py.
+Copy these eight files directly into:
+C:\Users\kovur\OneDrive\Documents\object_memory_assistant_final
+Replace them there. Do not create a nested update folder.
+Keep all existing models and data folders.
+
+RUN FROM THAT PROJECT FOLDER:
+.\.venv\Scripts\python.exe app.py
+
+There is no mode selector. General and trained recognition now run automatically.
+No new training, Colab session, dependencies or installer is needed.
+This update assumes the previously installed combined model files still exist:
+models/combined_demo/bottle_v2.pt
+models/combined_demo/objects_v3.pt
+Their installed checksums are verified. If missing or incompatible, the app
+reports that custom recognition is unavailable and continues with general objects.
+The general yolo11s.pt weights may download if not already present.
+
+HOW IT WORKS
+- General YOLO runs on every analysed frame, for the original standard categories.
+- Trained V2 bottle and V3 moisturizer/book run on every second analysed frame.
+- Specialists fill regions not already covered by the general detector.
+- Same-class overlapping detections are merged without boosting confidence.
+- Weak conflicting custom predictions do not replace general labels.
+- Strong overlapping class disagreements show an orange disputed category;
+  they cannot update category or personal-identity memory. Three consecutive
+  clean observations clear the dispute. This prevents specialist-skip frames
+  from silently accepting a previously disputed object.
+- Previous confirmed evidence is retained during disagreement.
+- Model confidence numbers are not treated as comparable probabilities.
+- Detector boxes always belong to the actual analysed frame. No old specialist
+  boxes are carried forward onto a new frame. Detection view shows frame age.
+- Personal names remain separate from categories and require review by default.
+
+LOCAL CHECK BEFORE THE DEMO
+1. Start a NEW camera session; the analysed-frame banner should update.
+2. Show phone, bottle and moisturizer separately, then together, holding each
+   steady long enough for several results. Confirm personal identities only
+   after checking the actual object/reference.
+3. Move an object, wait for another analysed result, then Find it. Check the
+   evidence timestamp and whole-scene position.
+4. If Models disagree appears, that is an unresolved result, not a successful
+   confirmed detection. The app deliberately preserves older confirmed evidence.
+5. The general detector can still miss objects; specialists can still be wrong.
+
+VALIDATION AND LIMITS
+13 new toolbar/fusion/scheduling/fallback/dispute-memory tests passed with fake
+inference. 10 personal-identity/search guards passed with the shipped manual-review
+policy. 84 legacy regressions passed in isolated fixtures explicitly using their
+selective-review policy and automatic models disabled; these tests are not an
+accuracy benchmark. Python and JSON syntax checked; archive integrity checked.
+Real Windows UI, webcam latency and actual model accuracy were not tested here.
+Existing custom weights have narrow training coverage. The prior dem.mp4 was
+training/development footage, not independent testing. One mode does not guarantee
+better accuracy than either model on every object, angle or scene. CPU processing
+can be slower on specialist frames. No 100% or all-angle claim is made.

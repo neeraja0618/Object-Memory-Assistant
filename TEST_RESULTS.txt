@@ -1,0 +1,1 @@
+Hybrid Recognition Edition: 76 automated tests pass; Python files compile. See TEST_RESULTS.md and validation/color_feature_check.json for scope and limitations. Real YOLO/DINOv2 inference and Windows GUI/webcam tests remain unverified here.

@@ -1,0 +1,11 @@
+# Replace this with your real dataset path. This is a layout example, not a dataset.
+path: C:/datasets/desk_objects
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: cell phone
+  1: bottle
+  2: book
+  3: cup
+  4: scissors

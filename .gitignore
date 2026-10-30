@@ -1,0 +1,29 @@
+# Python environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Local database and personal images
+data/*.sqlite
+data/*.sqlite-*
+data/references/
+
+# Incomplete downloads
+*.part
+
+# Temporary files
+*.tmp
+*.log
+
+# Editor files
+.vscode/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,111 @@
+{
+  "model": "yolo11s.pt",
+  "camera_index": 0,
+  "detection_confidence": 0.3,
+  "memory_confidence": 0.65,
+  "image_size": 640,
+  "minimum_observations": 6,
+  "vote_window": 12,
+  "label_agreement": 0.8,
+  "evidence_gap_seconds": 8.0,
+  "missing_after_seconds": 8.0,
+  "remember_classes": [
+    "cell phone",
+    "bottle",
+    "book",
+    "cup",
+    "remote",
+    "backpack",
+    "handbag",
+    "scissors",
+    "laptop",
+    "mouse",
+    "keyboard",
+    "moisturizer"
+  ],
+  "roi": null,
+  "zones": [],
+  "personal_enabled": true,
+  "reference_search": false,
+  "embedding_model": "facebook/dinov2-small",
+  "reference_model": "google/owlv2-base-patch16-ensemble",
+  "similarity_threshold": 0.8,
+  "similarity_margin": 0.06,
+  "possible_threshold": 0.65,
+  "personal_confirmations": 2,
+  "proposal_threshold": 0.25,
+  "max_personal_candidates": 6,
+  "video_sample_fps": 2,
+  "minimum_reference_views": 3,
+  "camera_motion_warning": true,
+  "review_policy": "always",
+  "auto_identity_observations": 3,
+  "review_cooldown_seconds": 15,
+  "max_review_requests": 20,
+  "history_window_seconds": 60,
+  "history_image_retention_seconds": 120,
+  "max_history_images": 250,
+  "history_sample_seconds": 1,
+  "confusion_threshold": 0.85,
+  "search_names": [
+    "moisturizer",
+    "purple bottle",
+    "grey waterbottle",
+    "neeraja's bottle"
+  ],
+  "combined_detector": {
+    "enabled": true,
+    "bottle_model": "models/combined_demo/bottle_v2.pt",
+    "other_model": "models/combined_demo/objects_v3.pt",
+    "sha256": {
+      "bottle_model": "b953dca89bc49adefd96e8d7119acc951433745b7e8fe045bb525733758089aa",
+      "other_model": "04402748d155ecd0e936ea302bfe39e705c45c72f6238b8a282167c6dafcf6b6"
+    }
+  },
+  "detector_mode": "Automatic",
+  "demo_model": "models/combined_demo/objects_v3.pt",
+  "demo_classes": [
+    "bottle",
+    "moisturizer",
+    "book"
+  ],
+  "general_model": "yolo11s.pt",
+  "general_classes": [
+    "cell phone",
+    "bottle",
+    "book",
+    "cup",
+    "remote",
+    "backpack",
+    "handbag",
+    "scissors",
+    "laptop",
+    "mouse",
+    "keyboard"
+  ],
+  "category_memory_enabled": true,
+  "strict_personal_names": true,
+  "suggestion_observations": 3,
+  "possible_category_confidence": 0.5,
+  "category_conflict_confidence": 0.7,
+  "identity_conflict_categories": [
+    "cell phone",
+    "bottle",
+    "cup",
+    "laptop",
+    "keyboard",
+    "mouse",
+    "book",
+    "scissors"
+  ],
+  "personal_category_hints": {
+    "moisturizer": "moisturizer",
+    "grey waterbottle": "bottle",
+    "violet waterbottle": "bottle"
+  },
+  "automatic_detector": {
+    "enabled": true,
+    "custom_every_n_frames": 2,
+    "conflict_confidence": 0.55
+  }
+}

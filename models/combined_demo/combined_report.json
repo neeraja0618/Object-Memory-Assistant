@@ -1,0 +1,66 @@
+{
+  "mode": "V2 bottle + V3 moisturizer/book; contradictory overlapping boxes omitted",
+  "confidence": 0.3,
+  "iou": 0.5,
+  "development": {
+    "bottle": {
+      "tp": 17,
+      "fp": 2,
+      "fn": 2,
+      "ground_truth": 19,
+      "precision": 0.8947368421052632,
+      "recall": 0.8947368421052632
+    },
+    "moisturizer": {
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "ground_truth": 2,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "book": {
+      "tp": 1,
+      "fp": 1,
+      "fn": 15,
+      "ground_truth": 16,
+      "precision": 0.5,
+      "recall": 0.0625
+    }
+  },
+  "training_demo_NOT_TEST": {
+    "bottle": {
+      "tp": 10,
+      "fp": 0,
+      "fn": 0,
+      "ground_truth": 10,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "moisturizer": {
+      "tp": 9,
+      "fp": 0,
+      "fn": 0,
+      "ground_truth": 9,
+      "precision": 1.0,
+      "recall": 1.0
+    },
+    "book": {
+      "tp": 9,
+      "fp": 0,
+      "fn": 0,
+      "ground_truth": 9,
+      "precision": 1.0,
+      "recall": 1.0
+    }
+  },
+  "passed": true,
+  "reasons": [],
+  "limitations": [
+    "Saved-prediction checks only; real camera/video latency and identity matching are not verified.",
+    "V3 trained on dem.mp4 and V2 saw desk photos. Neither is independent testing.",
+    "Broader book detection remains weak. Phone/cup/remote are outside this demo model.",
+    "Two models run per processed frame; CPU processing can be slower."
+  ],
+  "cpu_startup_check_seconds": 5.016000000061467
+}
